@@ -11,43 +11,51 @@ type TimelineItem = {
 
 const timelineData: TimelineItem[] = [
   {
+    id: 1,
     date: "2024年4月",
     title: "裸辞",
     description: "考虑了很久，最终准备裸辞备考N2",
   },
   {
+    id: 2,
     date: "2024年4月8号",
     title: "lastday",
     description: "办离职手续",
   },
   {
+    id: 3,
     date: "2024年7月6号",
     title: "N2 考试",
     description: "在浙江大学西溪校区考场考试",
   },
   {
+    id: 4,
     date: "2024年8月底",
     title: "JLPT 出成绩",
     description: "我 N2 和康的 N1 都过了，开心😄",
   },
   {
+    id: 5,
     date: "2024年8月19",
     title: "找到了新公司，入职",
     description: "入职了新公司、又开始挣窝囊废了",
   },
   {
+    id: 6,
     date: "2024年10月1",
     title: "国庆节",
     description:
       "去了东莞我姐那里玩了几天、然后去香港玩了1天、顺便办了张银行卡",
   },
   {
+    id: 7,
     date: "2024年10月6日",
     title: "决定报语言学校",
     description:
       "得知日本入管局在留资格审查收紧，决定报语言学校过去，然后边上学边找工作",
   },
   {
+    id: 8,
     date: "2024年10月",
     title: "语言学校报名",
     description: "决定报语言学校后，开始联系中介、选择学校、学校面试、资料递交",
@@ -58,6 +66,7 @@ export default function Page() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    timelineData.sort((a, b) => b.id - a.id);
     setIsVisible(true);
   }, []);
 
@@ -81,7 +90,9 @@ export default function Page() {
               className="z-20 flex items-center order-1"
               whileHover={{ scale: 1.2, transition: { duration: 0.2 } }}
             >
-              <h1 className="mx-auto font-semibold hidden md:block">{item.date}</h1>
+              <h1 className="mx-auto font-semibold hidden md:block">
+                {item.date}
+              </h1>
               <span className="mx-auto font-semibold md:hidden w-4 h-4 bg-black rounded-full"></span>
             </motion.div>
             <motion.div
